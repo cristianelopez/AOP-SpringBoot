@@ -17,17 +17,17 @@ public class LogInfoAspectCustomPointcut  {
 	static Logger logger = LoggerFactory.getLogger(LogInfoAspectCustomPointcut.class);
 	
 	/// CUSTOM  POINTCUT////
-	@Pointcut("execution(* aop.spring.example.controller.RestExampleController.*(..))")
+	@Pointcut("execution(* aop.spring.example.controller.AOPExampleController.*(..))")
 	public void methodsStarterServicePointcut() {
 	}
 
 	@Before("methodsStarterServicePointcut()")
 	public void beforeMethods() throws Throwable {
-		logger.info("/////// BEFORE /////");
+		logger.info("/////// LogInfoAspectCustomPointcut - BEFORE POINTCUT /////");
 	}
 
 	@After("methodsStarterServicePointcut()")
 	public void afterMethods() throws Throwable {
-		logger.info("/////// AFTER  /////");
+		logger.info("/////// LogInfoAspectCustomPointcut - AFTER POINTCUT /////");
 	}
 }
